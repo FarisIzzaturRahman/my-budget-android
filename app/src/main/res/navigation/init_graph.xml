@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/starter_graph"
+    app:startDestination="@id/starterFragment">
+
+    <fragment
+        android:id="@+id/starterFragment"
+        android:name="com.example.mybudget.ui.init.InitFragment"
+        android:label="fragment_starter"
+        tools:layout="@layout/fragment_init" >
+        <action
+            android:id="@+id/action_initFragment_to_menu_graph"
+            app:destination="@id/menu_graph"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popUpTo="@id/starter_graph"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <include app:graph="@navigation/menu_graph" />
+</navigation>
